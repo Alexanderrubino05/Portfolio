@@ -1,0 +1,47 @@
+/* About Me */
+#about-me-div {
+  padding: 200px 0 400px 0;
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: brightness(80%);
+  object-position: bottom;
+}
+
+.about-me-text-div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-me-headline {
+  font-size: 3em;
+}
+
+.about-me-body {
+  color: lightgray;
+  line-height: 36px;
+}
+
+.about-me-indicator {
+  height: 2px;
+  background-color: mediumslateblue;
+  width: 0;
+  margin-top: -12px;
+}
+
+@media only screen and (max-width: 1200px) { 
+  #about-me-div {
+    flex-direction: column;
+  }
+}

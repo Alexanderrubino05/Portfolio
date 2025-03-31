@@ -1,0 +1,284 @@
+.contact-div {
+  margin: 400px 0 0px 0;
+  padding: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 100px;
+}
+
+.contact-headline {
+  font-size: 80px;
+  letter-spacing: 4px;
+}
+.contact-underheadline {
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.contact-left-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 12px;
+}
+
+.contact-right-div {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  border-radius: 10px;
+  
+  background: linear-gradient(-45deg, rgba(0,0,0,0.2), rgba(41, 5, 42, 0.434), rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.contact-input {
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px 10px 12px 0;
+  margin: 10px 0 40px 0;
+  outline: none;
+  caret-color: white;
+  transition: border .2s ease-in ;
+  -webkit-transition: border .2s ease-in;
+  -moz-transition: border .2s ease-in;
+  -ms-transition: border .2s ease-in;
+  -o-transition: border .2s ease-in;
+}
+
+.contact-input:focus {
+  border-bottom: 1px solid mediumslateblue;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: gray;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: gray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: gray;
+}
+
+.input-label {
+  transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+}
+
+.contact-input:focus > .input-label {
+  margin-left: 12px;
+  color: red;
+}
+
+#content-input {
+  height: 80px;
+  vertical-align: top;
+}
+
+.send-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid mediumslateblue;
+  padding: 0;
+  margin: 0;
+}
+
+.buttonfx{
+  color: white; /* button text color */
+  outline: none;
+  background: transparent;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 4px;
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+/* //// Default effect: Slide from Top  //// */
+
+.buttonfx:before,
+.buttonfx:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: mediumslateblue; /* onhover background color */
+  z-index: -1;
+  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+.buttonfx:before{
+  background: transparent; /* button default background color */
+  z-index: -2;
+  transform: translate3D(0,0,0);
+}
+
+.buttonfx:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+/* //// Slide Left  //// */
+
+.slideleft:after{
+  top: 0;
+  z-index: -1;
+  transform: translate3D(-101%,0,0);
+}
+
+.slideleft:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+/* Loader */
+.loader {
+  position: absolute;
+  border: 4px solid rgb(71, 71, 71); /* Light grey */
+  border-top: 4px solid mediumslateblue; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: loaderSpin 2s linear infinite;
+  opacity: 0;
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+@keyframes loaderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Social Icons */
+.social-icons-div {
+  display: flex;
+  flex-direction: row;
+  grid-row: 2 / 2;
+  grid-column: 2 / 2;
+  justify-self: end;
+  padding-top: 40px;
+  gap: 20px;
+}
+
+.social-icon {
+  background: #111;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  gap: 12px;
+  width: 120px;
+  height: 120px;
+  scale: 0.9;
+  transition: scale .3s ease;
+  -webkit-transition: scale .3s ease;
+  -moz-transition: scale .3s ease;
+  -ms-transition: scale .3s ease;
+  -o-transition: scale .3s ease;
+}
+
+.social-icon-img {
+  object-fit: cover;
+  width: 40px;
+}
+
+.social-icon-text {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.social-icon:hover {
+  box-shadow: 0 0 2px gainsboro;
+  scale: 1;
+}
+
+
+@media only screen and (max-width: 700px) { 
+  .contact-div {
+    padding: 0 30px 0 30px;
+    margin-bottom: 80px;
+  }
+  
+  .contact-right-div {
+    padding: 30px;
+  }
+  
+  .contact-headline {
+    font-size: 45px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) { 
+  .contact-div {
+    grid-template-rows: 1fr 1fr 100px;
+    grid-template-columns: 1fr;
+  }
+  
+  .social-icons-div {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  
+  .contact-headline {
+    font-size: 60px;
+  }
+}

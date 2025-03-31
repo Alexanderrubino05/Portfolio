@@ -1,0 +1,91 @@
+/* First Page */
+.start-view {
+  font-size: 1.5em;
+  margin-top: 30vh;
+  height: 70vh;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#overall-animation-div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  clip-path: polygon(0 0, 100% 0, 0 0, 0 0);
+}
+
+#titles-innerdiv {
+  transition: transform .3s ease;
+  -webkit-transition: transform .3s ease;
+  -moz-transition: transform .3s ease;
+  -ms-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+}
+
+#title-dash {
+  height: fit-content;
+  transition: transform .3s ease;
+  -webkit-transition: transform .3s ease;
+  -moz-transition: transform .3s ease;
+  -ms-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+}
+
+#main-headline {
+  clip-path: polygon(0 0, 100% 0, 0 0, 0 0);
+  margin-bottom: 20px;
+}
+
+.animated-text {  
+  background: linear-gradient(to right, #cecece 20%, rgb(172, 182, 224) 40%, rgb(172, 182, 224) 60%, #cecece 80%);
+  background-size: 200% auto;
+  
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 12s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+/* Scroll to explore */
+.scroll-to-explore-div {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity .3s ease;
+  -webkit-transition: opacity .3s ease;
+  -moz-transition: opacity .3s ease;
+  -ms-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+}
+
+#scroll-to-explore-text {
+  font-size: 0.6em;
+  color: rgb(188, 187, 187);
+  letter-spacing: 6px;
+}
+
+#scroll-to-explore-indicator {
+  background-color: rgb(181, 31, 31);
+  width: 3px;
+  height: 100px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .start-view {
+    font-size: 1em;
+  }
+}

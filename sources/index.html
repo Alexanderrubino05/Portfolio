@@ -1,14 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Three.js - Template - Complex</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="experience"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alexander Rubino</title>
+    <meta
+      name="description"
+      content="Frontend/WordPress/App Developers Portfolio, Alexander Rubino. Made with Three.js."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, frontend, three.js, developer, arcade, room"
+    />
+    <meta name="author" content="Alexander Rubino" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/DNA-Symbol.webp"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script type="module" src="./index.js"></script>
-    </body>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/start.css" />
+    <link rel="stylesheet" href="/CSS/about.css" />
+    <link rel="stylesheet" href="/CSS/projects.css" />
+    <link rel="stylesheet" href="/CSS/skills.css" />
+    <link rel="stylesheet" href="/CSS/contact.css" />
+    <link rel="stylesheet" href="/CSS/loading.css" />
+  </head>
+  <body id="my-scroll">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"
+      integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("DNLrQXtv6udBD5RYJ");
+      })();
+    </script>
+
+    <!-- Loading Page -->
+    <div class="loading-page">
+      <div class="loading-page">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+
+    <div id="html">
+      <div class="start-view">
+        <div>
+          <h1 class="animated-text" id="main-headline">
+            My name is Alexander Rubino
+          </h1>
+          <div id="overall-animation-div">
+            <h1 class="animated-text" id="title-dash">-</h1>
+            <div id="titles-div">
+              <div id="titles-innerdiv">
+                <h1 class="animated-text headline-text" id="title-text">
+                  Frontend Developer
+                </h1>
+                <h1 class="animated-text headline-text" id="title-text">
+                  Wordpress Developer
+                </h1>
+                <h1 class="animated-text headline-text" id="title-text">
+                  Innovative Designer
+                </h1>
+                <h1 class="animated-text headline-text" id="title-text">
+                  App Developer
+                </h1>
+                <h1 class="animated-text headline-text" id="title-text">
+                  Backend Student
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-to-explore-div">
+          <p id="scroll-to-explore-text">SCROLL TO EXPLORE</p>
+          <div id="scroll-to-explore-indicator"></div>
+        </div>
+      </div>
+
+      <div id="about-me-div">
+        <div class="profile-img-wrap">
+          <img
+            class="profile-img"
+            src="/assets/images/me.webp"
+            alt="Can't load image"
+          />
+        </div>
+        <div class="about-me-text-div">
+          <h2 class="about-me-headline">About me</h2>
+          <div class="about-me-indicator"></div>
+          <h3 class="about-me-body">
+            Hi, my name is Alexander Rubino from Copenhagen, Denmark.
+            <br />Since initiating my developer career at the age of 12, I have
+            crafted innovative and creative projects. My passion lies in
+            crafting mesmerizing user interfaces that leave a lasting impression
+            on users.
+          </h3>
+        </div>
+      </div>
+
+      <div id="projects-div">
+        <h2 class="animated-text" id="my-projects-headline">my Projects</h2>
+
+        <button class="projects-link" id="basketball-website">
+          <div class="button-info-text-div button-laungage-div">
+            <p class="button-info-text laungage-text">Wordpress</p>
+          </div>
+          Basketball Website
+          <div class="button-info-text-div button-date-text">
+            <p class="button-info-text date-text">2022</p>
+          </div>
+
+          <img
+            class="projects-float-image"
+            src="/assets/images/basketball-website/1.webp"
+            alt="Some image"
+          />
+        </button>
+
+        <button class="projects-link" id="my-portfolio">
+          <div class="button-info-text-div button-laungage-div">
+            <p class="button-info-text laungage-text">Three.js</p>
+          </div>
+          My Portfolio
+          <div class="button-info-text-div button-date-text">
+            <p class="button-info-text date-text">2023</p>
+          </div>
+          <img
+            class="projects-float-image"
+            src="/assets/images/my-portfolio/3.png"
+            alt="Some image"
+          />
+        </button>
+
+        <button class="projects-link" id="simple-projects">
+          <div class="button-info-text-div button-laungage-div">
+            <p class="button-info-text laungage-text">React</p>
+          </div>
+          Simple Projects
+          <div class="button-info-text-div button-date-text">
+            <p class="button-info-text date-text">2023</p>
+          </div>
+          <img
+            class="projects-float-image"
+            src="/assets/images/simple-projects/1.webp"
+            alt="Some image"
+          />
+        </button>
+
+        <button class="projects-link" id="spine-agency">
+          <div class="button-info-text-div button-laungage-div">
+            <p class="button-info-text laungage-text">React</p>
+          </div>
+          Spine Agency
+          <div class="button-info-text-div button-date-text">
+            <p class="button-info-text date-text">2023</p>
+          </div>
+          <img
+            class="projects-float-image"
+            src="/assets/images/spine-agency/1.webp"
+            alt="Some image"
+          />
+        </button>
+
+        <button class="projects-link" id="bc-copenhagen-app">
+          <div class="button-info-text-div button-laungage-div">
+            <p class="button-info-text laungage-text">Glide</p>
+          </div>
+          BC Copenhagen App
+          <div class="button-info-text-div button-date-text">
+            <p class="button-info-text date-text">2022</p>
+          </div>
+          <img
+            class="projects-float-image"
+            src="/assets/images/bc-copenhagen-app/1.2.webp"
+            alt="Some image"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div id="skills-div"></div>
+
+      <div class="contact-div">
+        <div class="contact-left-div">
+          <h1 class="contact-headline animated-text">Contact me</h1>
+          <p class="contact-underheadline animated-text">
+            I will respond shortly
+          </p>
+        </div>
+
+        <div class="contact-right-div">
+          <label for="name-input" class="input-label">Name</label>
+          <input
+            type="text"
+            name="name-input"
+            id="name-input"
+            class="contact-input"
+            placeholder="What should I call you?"
+          />
+
+          <label for="email-input" class="input-label">Email</label>
+          <input
+            type="text"
+            name="email-input"
+            id="email-input"
+            class="contact-input"
+            placeholder="Your email"
+          />
+
+          <label for="content-input" class="input-label">Your message</label>
+          <textarea
+            name="content-input"
+            id="content-input"
+            class="contact-input"
+            placeholder="What is your message?"
+          ></textarea>
+
+          <div class="send-button-div">
+            <button class="buttonfx slideleft" id="send-message-button">
+              Send message
+            </button>
+            <div class="loader"></div>
+          </div>
+        </div>
+
+        <div class="social-icons-div">
+          <a
+            href="https://medium.com/@alexrubino05"
+            class="social-icon"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/Medium.png"
+              alt="Image"
+              class="social-icon-img"
+            />
+            <p class="social-icon-text">My blog</p>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/alexander-rubino-36896a26b/"
+            class="social-icon"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/Linkedin.png"
+              alt="Image"
+              class="social-icon-img"
+            />
+            <p class="social-icon-text">Linkedin</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Pages -->
+    <!-- Basketball Website -->
+    <div class="projects-individual-div" id="basketball-website-page">
+      <div
+        class="project-cover-img"
+        style="
+          background-image: url('/assets/images/basketball-website/1.webp');
+        "
+      ></div>
+
+      <div class="headline-div">
+        <h1 class="projects-headline animated-text">Basketball Website</h1>
+
+        <button class="projects-back-button-basketball-website projects-button">
+          Back
+          <div class="arrow-outer-div">
+            <div class="arrow-div arrow-back-button">
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="projects-underline-div">.</div>
+
+      <div class="projects-texts-div">
+        <div class="projects-left-div">
+          <p class="projects-undertext">
+            I created a website for BC Copenhagen, a professional basketball
+            team based in Denmark, using WordPress and its various plugins.
+            Throughout the development process, I learned valuable skills in
+            effective client communication and maintaining an open dialogue to
+            ensure the best possible outcome for the project.
+          </p>
+        </div>
+
+        <div class="projects-right-div">
+          <p class="projects-category-headline">Tools</p>
+          <p class="projects-undercategory" id="projects-skills">Wordpress</p>
+
+          <p class="projects-category-headline">Date</p>
+          <p class="projects-undercategory" id="projects-skills">2022</p>
+
+          <a
+            class="projects-visit-button"
+            href="https://bccopenhagen.com"
+            target="_blank"
+            >Visit Site</a
+          >
+        </div>
+      </div>
+
+      <img
+        class="projects-img"
+        src="/assets/images/basketball-website/2.1.webp"
+        alt="Can't load image"
+      />
+      <img
+        class="projects-img"
+        src="/assets/images/basketball-website/3.2.webp"
+        alt="Can't load image"
+      />
+      <img
+        class="projects-img"
+        src="/assets/images/basketball-website/4.1.webp"
+        alt="Can't load image"
+      />
+      <img
+        class="projects-img"
+        src="/assets/images/basketball-website/5.1.webp"
+        alt="Can't load image"
+      />
+
+      <div class="projects-underline-div">.</div>
+      <p class="projects-undertext bottom-text">Basketball Website</p>
+    </div>
+
+    <!-- My portfolio -->
+    <div class="projects-individual-div" id="my-portfolio-page">
+      <div
+        class="project-cover-img"
+        style="background-image: url('/assets/images/my-portfolio/2.jpg')"
+      ></div>
+
+      <div class="headline-div">
+        <h1 class="projects-headline animated-text">My portfolio</h1>
+
+        <button class="projects-back-button-my-portfolio projects-button">
+          Back
+          <div class="arrow-outer-div">
+            <div class="arrow-div arrow-back-button">
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="projects-underline-div">.</div>
+
+      <div class="projects-texts-div">
+        <div class="projects-left-div">
+          <p class="projects-undertext">
+            After realizing that my previous WordPress portfolio lacked
+            uniqueness, I decided to redesign it from scratch. I embarked on a
+            challenging journey, utilizing Three.js to create a brand new 3D
+            portfolio. Despite being my first time exploring the world of 3D
+            design, I embraced the learning process and gained valuable insights
+            along the way. <br />
+            It took me a couple of tries, but after experementing with Blender
+            and Three.js, I finaly finished my Portfolio.
+          </p>
+        </div>
+
+        <div class="projects-right-div">
+          <p class="projects-category-headline">Tools</p>
+          <p class="projects-undercategory projects-skills">
+            Threejs, JavaScript, WebGL, GSAP, WebGL
+          </p>
+
+          <p class="projects-category-headline">Date</p>
+          <p class="projects-undercategory">2023 August</p>
+        </div>
+      </div>
+
+      <img
+        class="projects-img"
+        src="/assets/images/my-portfolio/4.webp"
+        alt="Can't load image"
+      />
+      <p class="projects-undercategory image-undertext">My first attempt</p>
+
+      <img
+        class="projects-img contain-image"
+        src="/assets/images/my-portfolio/3.png"
+        alt="Can't load image"
+      />
+      <p class="projects-undercategory image-undertext">
+        My first Blender Project
+      </p>
+
+      <img
+        class="projects-img"
+        src="/assets/images/my-portfolio/6.jpg"
+        alt="Can't load image"
+      />
+      <p class="projects-undercategory image-undertext">
+        My second Blender Project
+      </p>
+
+      <div class="projects-underline-div">.</div>
+      <p class="projects-undertext bottom-text">My portfolio</p>
+    </div>
+
+    <!-- Simple Projects -->
+    <div class="projects-individual-div" id="simple-projects-page">
+      <div
+        class="project-cover-img"
+        style="background-image: url('/assets/images/simple-projects/1.webp')"
+      ></div>
+
+      <div class="headline-div">
+        <h1 class="projects-headline animated-text">Simple Projects</h1>
+
+        <button class="projects-back-button-simple-projects projects-button">
+          Back
+          <div class="arrow-outer-div">
+            <div class="arrow-div arrow-back-button">
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="projects-underline-div">.</div>
+
+      <div class="projects-texts-div">
+        <div class="projects-left-div">
+          <p class="projects-undertext">
+            One of my biggest strugle as a young student, is money and
+            publishing my projects. It is not free to publish a website or app,
+            which is why don't do it on a daily basis. But I still wanted to
+            showcase my projects, therefore I create Simple Projects. Which is a
+            website purely for showcasing my small and simple projects.
+          </p>
+        </div>
+
+        <div class="projects-right-div">
+          <p class="projects-category-headline">Tools</p>
+          <p class="projects-undercategory projects-skills">
+            React, Frammer Motion
+          </p>
+
+          <p class="projects-category-headline">Date</p>
+          <p class="projects-undercategory">2023 October</p>
+
+          <a
+            class="projects-visit-button"
+            href="https://alexanderrubino05.github.io"
+            target="_blank"
+            >Visit Site</a
+          >
+        </div>
+      </div>
+
+      <img
+        class="projects-img"
+        src="/assets/images/simple-projects/2.webp"
+        alt="Can't load image"
+      />
+
+      <img
+        class="projects-img"
+        src="/assets/images/simple-projects/3.webp"
+        alt="Can't load image"
+      />
+
+      <img
+        class="projects-img"
+        src="/assets/images/simple-projects/4.webp"
+        alt="Can't load image"
+      />
+
+      <img
+        class="projects-img"
+        src="/assets/images/simple-projects/5.webp"
+        alt="Can't load image"
+      />
+
+      <div class="projects-underline-div">.</div>
+      <p class="projects-undertext bottom-text">Simple Projects</p>
+    </div>
+
+    <!-- Spine Agency -->
+    <div class="projects-individual-div" id="spine-agency-page">
+      <div
+        class="project-cover-img"
+        style="background-image: url('/assets/images/spine-agency/1.webp')"
+      ></div>
+
+      <div class="headline-div">
+        <h1 class="projects-headline animated-text">Spine Agency</h1>
+
+        <button class="projects-back-button-spine-agency projects-button">
+          Back
+          <div class="arrow-outer-div">
+            <div class="arrow-div arrow-back-button">
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="projects-underline-div">.</div>
+
+      <div class="projects-texts-div">
+        <div class="projects-left-div">
+          <p class="projects-undertext">
+            I've set up a website for my company, Spine, where we focus on
+            creating digital products, including WordPress, FlutterFlow, and
+            more. Spine was born out of a shared passion for crafting memorable
+            projects that leave our clients satisfied. I, along with a group of
+            friends, started this venture, and we're committed to delivering
+            quality work that exceeds expectations. We take pride in our work,
+            and we hope you'll explore our agency's offerings and see what we
+            have to offer.
+          </p>
+        </div>
+
+        <div class="projects-right-div">
+          <p class="projects-category-headline">Tools</p>
+          <p class="projects-undercategory projects-skills">
+            React, GSAP, Frammer Motion
+          </p>
+
+          <p class="projects-category-headline">Date</p>
+          <p class="projects-undercategory">2023 August</p>
+
+          <a
+            class="projects-visit-button"
+            href="http://spine-agency.com"
+            target="_blank"
+            >Visit Site</a
+          >
+        </div>
+      </div>
+
+      <img
+        class="projects-img"
+        src="/assets/images/spine-agency/2.webp"
+        alt="Can't load image"
+      />
+
+      <img
+        class="projects-img"
+        src="/assets/images/spine-agency/3.webp"
+        alt="Can't load image"
+      />
+
+      <img
+        class="projects-img"
+        src="/assets/images/spine-agency/4.webp"
+        alt="Can't load image"
+      />
+
+      <div class="projects-underline-div">.</div>
+      <p class="projects-undertext bottom-text">Spine Agency</p>
+    </div>
+
+    <!-- BC Copenhagen app -->
+    <div class="projects-individual-div" id="bc-copenhagen-app-page">
+      <div
+        class="project-cover-img"
+        style="
+          background-image: url('/assets/images/bc-copenhagen-app/1.2.webp');
+        "
+      ></div>
+
+      <div class="headline-div">
+        <h1 class="projects-headline animated-text">BC Copenahgen App</h1>
+
+        <button class="projects-back-button-bc-copenhagen-app projects-button">
+          Back
+          <div class="arrow-outer-div">
+            <div class="arrow-div arrow-back-button">
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+              <svg
+                style="color: white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  fill="rgb(71, 71, 171)"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="projects-underline-div">.</div>
+
+      <div class="projects-texts-div">
+        <div class="projects-left-div">
+          <p class="projects-undertext">
+            I have developed an custom app for BC Copenhagen, a professional
+            basketball team in Denmark. Utilizing Glide, a no-code building
+            platform, along with a touch of CSS, made it possible to finish the
+            app within <span class="popoutText">3 weeks</span>. To enhance its
+            functionality, I integrated an API that provides live data for the
+            Danish League games, and an API that showcases the teams Instagram.
+          </p>
+        </div>
+
+        <div class="projects-right-div">
+          <p class="projects-category-headline">Tools</p>
+          <p class="projects-undercategory projects-skills">
+            Glide, CSS, JavaScript
+          </p>
+
+          <p class="projects-category-headline">Date</p>
+          <p class="projects-undercategory">2022</p>
+
+          <a
+            class="projects-visit-button"
+            href="https://bc-copenhagen-qof2.glideapp.io"
+            target="_blank"
+            >Visit Site</a
+          >
+        </div>
+      </div>
+
+      <img
+        class="projects-img"
+        src="/assets/images/bc-copenhagen-app/2.1.webp"
+        alt="Can't load image"
+      />
+      <img
+        class="projects-img"
+        src="/assets/images/bc-copenhagen-app/3.1.webp"
+        alt="Can't load image"
+      />
+      <img
+        class="projects-img"
+        src="/assets/images/bc-copenhagen-app/4.jpg"
+        alt="Can't load image"
+      />
+
+      <div class="projects-underline-div">.</div>
+      <p class="projects-undertext bottom-text">BC Copenhagen App</p>
+    </div>
+
+    <div id="container"></div>
+    <script type="module" src="/index.js"></script>
+  </body>
 </html>
