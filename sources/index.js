@@ -10,17 +10,18 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 
 //Laungages Icons
 import SWIFTUIIcon from "/assets/images/laungages/SwiftUI.png";
-import FIGMAIcon from "/assets/images/laungages/Figma.png";
-import GLIDEIcon from "/assets/images/laungages/Glide.png";
 import PHPIcon from "/assets/images/laungages/PHP.png";
 import THREEJSIcon from "/assets/images/laungages/Threejs.png";
-import WORDPRESSIcon from "/assets/images/laungages/Wordpress.png";
-import JAVASCRIPTIcon from "/assets/images/laungages/JavaScript.png";
-import BLENDERIcon from "/assets/images/laungages/Blender.png";
 import REACTIcon from "/assets/images/laungages/React.png";
-import FLUTTERFLOWIcon from "/assets/images/laungages/Flutterflow.png";
 import LARAVELIicon from "/assets/images/laungages/Laravel.png";
 import NODEJSIcon from "/assets/images/laungages/Nodejs.png";
+import AIICON from "/assets/images/laungages/AI.png";
+import MLICON from "/assets/images/laungages/ML.png";
+import NextJSIcon from "/assets/images/laungages/Nextjs.png";
+import SQLIcon from "/assets/images/laungages/SQL.png";
+import PYTHONIcon from "/assets/images/laungages/Python.png";
+import DEVOPSIcon from "/assets/images/laungages/Devops.png";
+import TYPESCRIPTIcon from "/assets/images/laungages/Typescript.png";
 
 //Hide scrollbars
 const htmlDiv = document.getElementById("html");
@@ -290,7 +291,6 @@ export default class Sketch {
     this.setupAnimationsForTitle();
     this.setupScrollToExplore();
     this.setupAboutMe();
-    this.setupProjectsEventListener();
     this.createSkillsView();
     this.handleEmailSend();
     this.setupEventListenerForProjectImages();
@@ -668,65 +668,6 @@ export default class Sketch {
     });
   }
 
-  setupProjectsEventListener() {
-    this.projectLinks = document.getElementsByClassName("projects-link");
-    this.lastScrollPosition = 0;
-    this.selectedLinkId = undefined;
-
-    for (var i = 0; i < this.projectLinks.length; i++) {
-      const link = this.projectLinks[i];
-
-      link.addEventListener("click", () => {
-        //clicked one of the projects
-        gsap.to(this.dna.position, {
-          x: 15,
-          duration: 2,
-          ease: "power3.inOut",
-        });
-        //Move HTML
-        document.getElementById("html").style.opacity = "0";
-        document.getElementById("html").style.pointerEvents = "none";
-        this.isShowingProjectIndividualPage = true;
-
-        setTimeout(() => {
-          //Scroll to top
-          this.lastScrollPosition = window.scrollY;
-          window.scrollTo(0, 0);
-
-          document.getElementById(link.id + "-page").style.display = "flex";
-          document.getElementById(link.id + "-page").style.opacity = "1";
-          document.getElementById(link.id + "-page").style.pointerEvents =
-            "auto";
-          document.getElementById("html").style.display = "none";
-          document.querySelector(".bottom").style.display = "none";
-        }, 800);
-      });
-
-      const backButtonClass = ".projects-back-button-" + link.id;
-      //Handle back button
-      document.querySelector(backButtonClass).addEventListener("click", () => {
-        gsap.to(this.dna.position, { x: 0, duration: 2, ease: "power3.inOut" });
-
-        //Move HTML
-        document.getElementById(link.id + "-page").style.display = "none";
-        document.getElementById(link.id + "-page").style.opacity = "0";
-        document.getElementById(link.id + "-page").style.pointerEvents = "none";
-        this.isShowingProjectIndividualPage = false;
-
-        document.getElementById("html").style.display = "flex";
-        document.querySelector(".bottom").style.display = "block";
-
-        setTimeout(() => {
-          //Scroll to norms
-          window.scrollTo(this.lastScrollPosition, this.lastScrollPosition);
-
-          document.getElementById("html").style.opacity = "1";
-          document.getElementById("html").style.pointerEvents = "auto";
-        }, 800);
-      });
-    }
-  }
-
   createProjectPageImage() {
     const textureLoader = new THREE.TextureLoader();
 
@@ -768,19 +709,20 @@ export default class Sketch {
   //Create skills horizontal view
   createSkillsView() {
     const skills = [
-      Array("JavaScript", JAVASCRIPTIcon),
-      Array("Node.js", NODEJSIcon),
-      Array("SwiftUI", SWIFTUIIcon),
-      Array("Wordpress", WORDPRESSIcon),
-      Array("Glide", GLIDEIcon),
+      Array("TypeScript", TYPESCRIPTIcon),
       Array("React", REACTIcon),
+      Array("NextJS", NextJSIcon),
+      Array("Node.js", NODEJSIcon),
+      Array("SQL", SQLIcon),
+      Array("DevOps", DEVOPSIcon),
+      Array("Machine Learning", MLICON),
+      Array("Artificial Intelligence", AIICON),
+      Array("Python", PYTHONIcon),
       Array("Three.js", THREEJSIcon),
-      Array("Flutterflow", FLUTTERFLOWIcon),
+      Array("SwiftUI", SWIFTUIIcon),
       Array("React Native", REACTIcon),
-      Array("Figma", FIGMAIcon),
       Array("PHP", PHPIcon),
       Array("Laravel", LARAVELIicon),
-      Array("Blender", BLENDERIcon),
     ];
     const skillsDiv = document.getElementById("skills-div");
 
@@ -818,6 +760,7 @@ export default class Sketch {
       image.src = skill[1];
       image.alt = skill[0];
       image.className = "skill-img";
+      image.style.filter = "brightness(0) invert(1)"; // Makes the image white
 
       //Add Elements
       skillDiv.appendChild(skillBlueIndicator);
